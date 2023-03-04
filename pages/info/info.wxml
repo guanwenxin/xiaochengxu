@@ -1,0 +1,4 @@
+<h1 class="title">我的个人信息</h1>
+<img width="40" height="40" src="{{avatarUrl}}"/>
+<button bindtap="login">用微信身份登录</button>
+<button bindtap="getUserInfo"></button>

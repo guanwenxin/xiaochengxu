@@ -1,0 +1,33 @@
+{
+  "usingComponents": {
+    "v-button": "/miniprogram_npm/@vant/weapp/button/index"
+  },
+  "pages": [
+    "pages/index/index",
+    "pages/info/info"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#14A1A9",
+    "navigationBarTitleText": "Guan",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#14A1A9",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "业务",
+        "iconPath": "images/biz.png",
+        "selectedIconPath": "images/biz-h.png"
+      },
+      {
+        "pagePath": "pages/info/info",
+        "text": "我的",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me-h.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,10 +1,11 @@
 // index.js
 // 获取应用实例
 const app = getApp()
+const {getImageBase64} = require('../../utils/util')
 
 Page({
   data: {
-    motto: 'World'
+    imgBase64: ''
   },
   // 事件处理函数
   bindViewTap() {
@@ -12,10 +13,21 @@ Page({
       url: '../logs/logs'
     })
   },
-  test() {
-    this.setData({
-      motto: 'test'
+  async upload() {
+    const getFile = await wx.chooseMedia({
+      count: 1,
+      mediaType: ['image'],
+      sourceType: ['album'],
+      sizeType: ['compressed'],
     })
+    const result = getImageBase64(getFile.tempFiles[0].tempFilePath)
+    console.log(result)
+    this.setData({
+      imgBase64: result
+    })
+    // TODO: 上传到腾讯云api
+    // TODO: 会先结果图片
+    console.log(getFile)
   },
   onLoad() {
     if (wx.getUserProfile) {

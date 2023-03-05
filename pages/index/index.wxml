@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-    <v-button type="primary" bindtap="test">点我试试</v-button>
+    <image src="{{imgBase64}}"></image>
+    <v-button type="primary" bindtap="upload">点击上传图片</v-button>
   </view>
 </view>

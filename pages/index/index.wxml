@@ -4,4 +4,7 @@
     <image src="{{imgBase64}}"></image>
     <v-button type="primary" bindtap="upload">点击上传图片</v-button>
   </view>
+  <view>
+    <image src="{{afterHandle}}"></image>
+  </view>
 </view>

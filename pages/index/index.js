@@ -5,7 +5,8 @@ const {getImageBase64} = require('../../utils/util')
 
 Page({
   data: {
-    imgBase64: ''
+    imgBase64: '',
+    afterHandle: ''
   },
   // 事件处理函数
   bindViewTap() {
@@ -26,6 +27,19 @@ Page({
       imgBase64: result
     })
     // TODO: 上传到腾讯云api
+    wx.request({
+      url: 'http://101.43.145.34:9000/ai',
+      method: 'POST',
+      data: {
+        img: result
+      },
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          afterHandle: `data:image/jpg;base64,${res.data.Image}`
+        })
+      }
+    })
     // TODO: 会先结果图片
     console.log(getFile)
   },
